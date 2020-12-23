@@ -29,6 +29,26 @@ class DonhangController extends Controller
             )
             ->groupBy('hoadon.ma_hd')
             ->get();
-        return view('Admin.Content.donhang');
+        return view('Admin.Content.donhang', [
+            'donhang' => $donhang,
+        ]);
+    }
+    public function chitietdh(Request $request, $id)
+    {
+        if(isset($request->updatedh)){
+            DB::table('hoadon')
+            ->where('ma_hd','=',$id)
+            ->update([
+                'status' => $request->tt,
+            ]);
+        }
+        $data = DB::table('chitiethoadon')
+            ->join('sanpham', 'sanpham.ma_sp', '=', 'chitiethoadon.SANPHAMma_sp')
+            ->where('chitiethoadon.HOADONma_hd', '=', $id)
+            ->select('chitiethoadon.soluong', 'sanpham.tensp', 'chitiethoadon.dongia')
+            ->get();
+        return view('Admin.Content.chitietdh', [
+            'product' => $data
+        ]);
     }
 }

@@ -29,21 +29,36 @@
                         <th>Hành động</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      
+                    <tfoot>
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>        
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></a></td>       
+                        <th>STT</th>
+                        <th>Mã đơn hàng</th>
+                        <th>Tên khách hàng</th>
+                        <th>Địa chỉ</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Tổng tiền</th>
+                        <th>Ngày đặt</th>
+                        <th>Tình trạng</th>
+                        <th>Hành động</th>
                       </tr>
-                     
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      @foreach ($donhang as $item)
+                      <tr>
+                        <td>{{$loop->index+1}}</td>
+                        <td>{{$item->ma_hd}}</td>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->diachi}}</td>
+                        <td>{{$item->email}}</td>
+                        <td>{{$item->sdt}}</td>        
+                        <td>{{number_format($item->tongtien)}} ₫</td>
+                        <td>{{$item->ngaytao}}</td>
+                        <td>{{($item->status)==0 ? "Chưa xử lý" : "Đã xử lý"}}</td>
+                        <td><a href="{{route('chitietdh',['id'=>$item->ma_hd])}}">Xem chi tiết</a></td>       
+                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
