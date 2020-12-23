@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 08, 2020 at 08:43 AM
+-- Generation Time: Dec 14, 2020 at 04:00 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -56,18 +56,19 @@ CREATE TABLE IF NOT EXISTS `chitiethoadon` (
   PRIMARY KEY (`ma_chitiethd`),
   KEY `FKCHITIETHOA356838` (`HOADONma_hd`),
   KEY `FKCHITIETHOA558660` (`SANPHAMma_sp`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `chitiethoadon`
 --
 
 INSERT INTO `chitiethoadon` (`ma_chitiethd`, `soluong`, `dongia`, `HOADONma_hd`, `SANPHAMma_sp`) VALUES
-(3, 1, 15690000, 2, 36),
-(4, 1, 22590000, 2, 6),
-(11, 1, 14990000, 7, 7),
-(12, 1, 12240000, 7, 2),
-(13, 1, 15290000, 7, 5);
+(14, 1, 22590000, 8, 6),
+(15, 1, 14990000, 8, 7),
+(16, 1, 15290000, 8, 5),
+(17, 1, 22590000, 9, 6),
+(18, 1, 14990000, 9, 7),
+(19, 1, 12240000, 10, 2);
 
 -- --------------------------------------------------------
 
@@ -150,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `hinh` (
   `status` char(20) DEFAULT NULL,
   PRIMARY KEY (`ma_hinh`),
   KEY `SANPHAMma_sp` (`SANPHAMma_sp`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `hinh`
@@ -163,11 +164,6 @@ INSERT INTO `hinh` (`ma_hinh`, `tenhinh`, `url`, `SANPHAMma_sp`, `status`) VALUE
 (8, 'banner', 'banner/2_6.jpg', NULL, NULL),
 (15, 'banner_dell', '2.jpg', NULL, NULL),
 (30, 'li-bg-menu', 'menu/li-bg-menu.jpg', NULL, NULL),
-(80, 'sanpham', '1.png', 1, NULL),
-(81, 'sanpham', '2.png', 1, NULL),
-(82, 'sanpham', '3.png', 1, NULL),
-(83, 'sanpham', '4.jpg', 1, NULL),
-(86, 'sanpham', '5.jpg', 1, NULL),
 (87, 'sanpham', '7.jpg', 2, NULL),
 (89, 'sanpham', '9.jpg', 2, NULL),
 (90, 'sanpham', '10.jpg', 2, NULL),
@@ -179,11 +175,6 @@ INSERT INTO `hinh` (`ma_hinh`, `tenhinh`, `url`, `SANPHAMma_sp`, `status`) VALUE
 (96, 'sanpham', '16.png', 3, NULL),
 (97, 'sanpham', '17.png', 3, NULL),
 (99, 'sanpham', '18.jpg', 3, NULL),
-(100, 'sanpham', '19.png', 4, NULL),
-(101, 'sanpham', '20.png', 4, NULL),
-(102, 'sanpham', '21.png', 4, NULL),
-(103, 'sanpham', '22.png', 4, NULL),
-(104, 'sanpham', '23.png', 4, NULL),
 (105, 'sanpham', 'fzPVHfBpB43XUGA.png', 5, NULL),
 (106, 'sanpham', 'zfcKOCSXyEiFsfN.png', 5, NULL),
 (107, 'sanpham', 'fOpxnOn2hwz1Y1o.png', 5, NULL),
@@ -198,12 +189,7 @@ INSERT INTO `hinh` (`ma_hinh`, `tenhinh`, `url`, `SANPHAMma_sp`, `status`) VALUE
 (116, 'sanpham', 'Y0rSeihts0eaB74.png', 7, NULL),
 (117, 'sanpham', 'pJ3dTiZa2GJJ4nP.png', 7, NULL),
 (118, 'sanpham', 'N0Pq1x4KAfN6zzR.png', 7, NULL),
-(119, 'sanpham', '8PKsw6Xv6YyzZy5.png', 7, NULL),
-(144, 'sanpham', 'VkBKtIkDAnYk9lJ.png', 36, NULL),
-(145, 'sanpham', 'fjKPb7LbEZExJSV.png', 36, NULL),
-(146, 'sanpham', 'vi6YrLO0rAmmCT4.png', 36, NULL),
-(147, 'sanpham', 'kjqezMpy6qEJgIE.png', 36, NULL),
-(148, 'sanpham', 'sLXGvUGijnlcXqb.png', 36, NULL);
+(119, 'sanpham', '8PKsw6Xv6YyzZy5.png', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -218,20 +204,23 @@ CREATE TABLE IF NOT EXISTS `hoadon` (
   `tongsl` int(5) NOT NULL DEFAULT '1',
   `diachi` varchar(100) NOT NULL,
   `sdt` char(11) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   `ngaytao` datetime DEFAULT CURRENT_TIMESTAMP,
   `ngaycapnhat` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `USERma_user` int(10) NOT NULL,
   PRIMARY KEY (`ma_hd`),
   KEY `FKHOADON604606` (`USERma_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `hoadon`
 --
 
-INSERT INTO `hoadon` (`ma_hd`, `tongtien`, `tongsl`, `diachi`, `sdt`, `ngaytao`, `ngaycapnhat`, `USERma_user`) VALUES
-(2, 38280000, 2, '180 Cao Lỗ phường 4 quận 8 TP Hồ Chí Minh', '035147899', '2020-12-07 20:25:52', '2020-12-07 13:25:52', 8),
-(7, 42520000, 3, '18 Pham Thi Tanh phuong 4 quan 8 TP HCM', '0352771239', '2020-12-08 15:33:17', '2020-12-08 08:33:17', 24);
+INSERT INTO `hoadon` (`ma_hd`, `tongtien`, `tongsl`, `diachi`, `sdt`, `status`, `ngaytao`, `ngaycapnhat`, `USERma_user`) VALUES
+(2, 38280000, 2, '180 Cao Lỗ phường 4 quận 8 TP Hồ Chí Minh', '035147899', 0, '2020-12-07 20:25:52', '2020-12-07 13:25:52', 8),
+(8, 52870000, 3, '18 đường Phạm Thị Tánh phường 4 quận 8 TP Hồ Chi Minh', '0123456', 1, '2020-12-11 15:19:18', '2020-12-11 08:19:18', 8),
+(9, 37580000, 2, '1800 đường Phạm Thị Tánh phường 4 quận 8 TP Hồ Chi Minh', '0123456', 0, '2020-12-12 08:12:45', '2020-12-12 01:12:45', 8),
+(10, 12240000, 1, '18 Pham Thi Tanh phuong 4 quan 8 TP HCM', '0352771239', 1, '2020-12-13 20:24:21', '2020-12-13 13:24:21', 24);
 
 -- --------------------------------------------------------
 
@@ -252,31 +241,28 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
   `VGA` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `manhinh` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `hedieuhanh` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `status` tinyint(3) DEFAULT NULL,
+  `status` tinyint(3) DEFAULT '1',
   `mota` text,
   `url` varchar(50) DEFAULT NULL,
-  `ngaytao` timestamp NULL DEFAULT NULL,
-  `ngaycapnhat` timestamp NULL DEFAULT NULL,
+  `ngaytao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ngaycapnhat` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `DANHMUCma_danhmuc` int(10) DEFAULT NULL,
   `HANGSXma_nhasanxuat` int(10) DEFAULT NULL,
   `hinhanh` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ma_sp`),
   KEY `FKSANPHAM558209` (`HANGSXma_nhasanxuat`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sanpham`
 --
 
 INSERT INTO `sanpham` (`ma_sp`, `tensp`, `soluong`, `dongia`, `thoigianbaohanh`, `giakhuyenmai`, `RAM`, `CPU`, `VGA`, `manhinh`, `hedieuhanh`, `status`, `mota`, `url`, `ngaytao`, `ngaycapnhat`, `DANHMUCma_danhmuc`, `HANGSXma_nhasanxuat`, `hinhanh`) VALUES
-(1, 'Laptop Acer Aspire 3 A315 34 C38Y CDC', 15, 6999000, NULL, 6999000, '4 GB DDR4 2666 MHz', 'Intel Celeron N4020', 'Intel UHD Graphics 600', '15.6\", 1280 x 720 Pixel, Đang cập nhật, Đang cập nhật, Đang cập nhật, Acer ComfyView LED-backlit', 'Windows 10', NULL, 'Acer Aspire 3 A315 34 C38Y là chiếc laptop rất phù hợp với học sinh, sinh viên khi máy có mức giá cực rẻ, gọn nhẹ di động và ổ cứng SSD cho tốc độ nhanh, sử dụng bền vững hơn.', NULL, NULL, NULL, NULL, 3, '1.png'),
 (2, 'Laptop HP 15s fq1116TU i3', 20, 12240000, NULL, 12240000, '8 GB DDR4 2666 MHz', 'Intel Core i3-1005G1', 'Intel UHD Graphics', '15.6\", 1366 x 768 Pixel, SVA, 60 Hz, 220 nits, Micro-edge WLED-backlit', 'Windows 10', NULL, 'Phiên bản màu vàng sang trọng, cấu hình mạnh mẽ cùng kiểu dáng di động hàng đầu, HP 15s fq1116TU chính là chiếc laptop hỗ trợ đắc lực cho bạn trong cả công việc, học tập và giải trí.\r\nHP 15s fq1116TU sở hữu hiệu năng rất tốt nhờ bộ vi xử lý Intel thế hệ thứ 10 Ice Lake mới nhất. Laptop được trang bị bộ vi xử lý Intel Core i3 1005G1, con chip sản xuất trên tiến trình 10nm tiên tiến, xung nhịp tối đa 3.4 GHz, đủ để chạy tốt những ứng dụng văn phòng, học tập. Đi cùng với đó là 8GB RAM DDR4 và 512GB ổ cứng SSD. Ổ cứng SSD đóng vai trò quan trọng trong việc tăng tốc toàn diện máy tính, khi cả tốc độ khởi động, mở ứng dụng lẫn truyền dữ liệu đều nhanh vượt trội so với những laptop chỉ có ổ HDD. Bạn sẽ được tận hưởng sự mượt mà, nhanh chóng khi sử dụng HP 15s.', NULL, NULL, NULL, NULL, 4, '7.jpg'),
 (3, 'Laptop Dell XPS 15 9500 i7', 5, 59990000, NULL, 59990000, '16 GB DDR4 2933 MHz', 'Intel Core i7-10750H', 'NVIDIA GeForce GTX 1650Ti 4 GB', '15.6\", 3840 x 2400 Pixel, WVA, 60 Hz, 500 nits, Anti-glare LED-backlit', 'Windows 10', NULL, 'Phiên bản màu vàng sang trọng, cấu hình mạnh mẽ cùng kiểu dáng di động hàng đầu, HP 15s fq1116TU chính là chiếc laptop hỗ trợ đắc lực cho bạn trong cả công việc, học tập và giải trí.\r\n', NULL, NULL, NULL, NULL, 1, '13.png'),
-(4, 'MacBook Air 13\" 2020 1.1GHz Core i5 512GB', 11, 32990000, NULL, 32990000, '8 GB LPDDR4 3733 MHz', 'Intel Core i5-10th-gen', 'Intel Iris Plus Graphics', '13.3\", 2560 x 1600 Pixel, IPS, Đang cập nhật, Đang cập nhật, IPS LCD LED Backlit, True Tone', 'Mac OS', NULL, 'Chiếc máy tính xách tay siêu mỏng nhẹ cơ động với màn hình Retina tuyệt đẹp, sức mạnh đáng kinh ngạc và bàn phím hoàn toàn mới, Macbook Air 13 2020 512GB chính là người bạn đồng hành luôn bên bạn cả khi làm việc cũng như giải trí.\r\nBên trong chiếc máy có trọng lượng chỉ 1,27kg là một sức mạnh đáng kinh ngạc. MacBook Air 13 2020 512GB mang trên mình bộ vi xử lý Intel Core i5 thế hệ thứ 10 với 4 nhân tốc độ 1,1GHz Turbo Boost lên tới 3,5GHz.', NULL, NULL, NULL, NULL, 5, '19.png'),
 (5, 'Laptop Lenovo IdeaPad C340 15IIL i5', 21, 15290000, NULL, 15290000, '8 GB DDR4 2666 MHz', 'Intel Core i5-1035G1', 'Intel UHD Graphics', '15.6\", 1920 x 1080 Pixel, IPS, 60 Hz, 250 nits, LED-backlit', 'Windows 10', NULL, 'Lenovo Ideapad C340-15IIL là chiếc laptop lai đầy sáng tạo, vừa mạnh mẽ lại vừa hết sức linh hoạt. Nhanh chóng chuyển hóa những ý tưởng thành hiện thực, Lenovo C340 không chỉ là phương tiện làm việc mà còn là nguồn cảm hứng bất tận dành cho bạn.\r\nSử dụng tới 4 chế độ, linh hoạt ở mọi hoàn cảnh\r\nViệc có thể xoay gập 360 độ giúp Lenovo Ideapad C340-15IIL trở thành một chiếc laptop rất đa năng. Ngoài chế độ máy tính xách tay quen thuộc, bạn có thể gập chéo máy để trở thành chế độ trình chiếu, hoặc chế độ máy tính bảng, thao tác trực tiếp lên màn hình một cách nhanh chóng và dễ dàng.', NULL, NULL, NULL, NULL, 7, 'fzPVHfBpB43XUGA.png'),
 (6, 'Laptop Dell G3 15 i5', 3, 22590000, NULL, 22590000, '8 GB DDR4 2933 MHz', 'Intel Core i5-10300H', 'NVIDIA GeForce GTX 1650 4 GB', '15.6\", 1920 x 1080 Pixel, IPS, 60 Hz, 250 nits, Anti-glare WLED-backlit', 'Windows 10', NULL, 'Sức mạnh đỉnh cao, thiết kế cực ngầu, Dell G3 15 là chiếc laptop chơi game 15,6 inch trang bị bộ vi xử lý Intel thế hệ thứ 10 và card rời GTX 1650, sẽ đưa bạn đến chiến thắng trong mọi cuộc chơi.\r\nBộ vi xử lý Intel thế hệ thứ 10 mạnh mẽ\r\nSức mạnh của Dell G3 15 đến từ bộ vi xử lý Intel thế hệ thứ 10 tiên tiến. Máy trang bị con chip Intel Core i5 10300H với 4 lõi 8 luồng, tốc độ 4.50 GHz cực mạnh. Hiệu năng mạnh mẽ sẽ giúp cho trải nghiệm game của bạn không bị gián đoạn vì những hiện tượng giật lag, ngoài ra bạn còn có thể livestream, xem video và làm các công việc khác một cách mượt mà.', NULL, NULL, NULL, NULL, 1, 'kBhzqgJp8azHG3d.png'),
-(7, 'Laptop HP 348 G7 i5', 17, 14990000, NULL, 14990000, '8 GB DDR4 2666 MHz', 'Intel Core i5-10210U', 'Intel UHD Graphics', '14.0\", 1920 x 1080 Pixel, Đang cập nhật, 60 Hz, 220 nits, WLED-backlit', 'Windows 10', NULL, 'HP 348 G7 là chiếc laptop màn hình 14 inch được thiết kế nhỏ gọn, chạy bộ vi xử lý Intel Core i5 thế hệ thứ 10 mạnh mẽ và có khả năng bảo mật tốt, được bán trong tầm giá rất hợp lý.\r\nCấu hình tốt cho công việc, học tập\r\nHP 348 G7 sở hữu một cấu hình hết sức mạnh mẽ, tự tin đáp ứng tốt nhu cầu công việc và giải trí của bạn. Bộ não của chiếc laptop nhỏ gọn này là con chip Intel Core i5 10210U với 4 lõi 8 luồng, xung nhịp tối đa 4.20 GHz, cực mạnh và cũng rất tiết kiệm điện.', NULL, NULL, NULL, NULL, 4, 'OGDRLIsA77WlFi1.png'),
-(36, 'Laptop MSI Modern 14 A10M 1053VN i5', 10, 15690000, NULL, 15690000, '4 GB DDR4 2666 MHz', 'Intel Core i5-10210U', 'Intel UHD Graphics', '14.0\", 1920 x 1080 Pixel, IPS, 60 Hz, Đang cập nhật, LED-backlit', 'Windows 10', NULL, 'Màn hình viền mỏng 5,7mm của MSI Modern 14 A10M giúp trải nghiệm xem của bạn nâng lên một tầm cao mới. Trước mắt bạn sẽ là màn hình 14.0 inch độ phân giải Full HD sắc nét, độ tương phản cao và màu sắc chính xác. Hiệu ứng của màn hình viền mỏng mang đến hình ảnh như nổi lên, vô cùng sống động. Dù là làm việc hay giải trí thì màn hình này cũng tạo nên rất nhiều cảm hứng để bạn thỏa sức sáng tạo.', NULL, NULL, NULL, NULL, 2, 'VkBKtIkDAnYk9lJ.png');
+(7, 'Laptop HP 348 G7 i5', 17, 14990000, NULL, 14990000, '8 GB DDR4 2666 MHz', 'Intel Core i5-10210U', 'Intel UHD Graphics', '14.0\", 1920 x 1080 Pixel, Đang cập nhật, 60 Hz, 220 nits, WLED-backlit', 'Windows 10', NULL, 'HP 348 G7 là chiếc laptop màn hình 14 inch được thiết kế nhỏ gọn, chạy bộ vi xử lý Intel Core i5 thế hệ thứ 10 mạnh mẽ và có khả năng bảo mật tốt, được bán trong tầm giá rất hợp lý.\r\nCấu hình tốt cho công việc, học tập\r\nHP 348 G7 sở hữu một cấu hình hết sức mạnh mẽ, tự tin đáp ứng tốt nhu cầu công việc và giải trí của bạn. Bộ não của chiếc laptop nhỏ gọn này là con chip Intel Core i5 10210U với 4 lõi 8 luồng, xung nhịp tối đa 4.20 GHz, cực mạnh và cũng rất tiết kiệm điện.', NULL, NULL, NULL, NULL, 4, 'OGDRLIsA77WlFi1.png');
 
 -- --------------------------------------------------------
 

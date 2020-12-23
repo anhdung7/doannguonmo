@@ -56,6 +56,7 @@ Route::get('search',[SearchController::class,'index']);
 Route::get('/contact', [ContactController::class,'index'])->name('contact');
 Route::get('/checkout', [CheckoutController::class,'index'])->middleware('auth')->name('checkout');
 Route::post('/dathang', [CheckoutController::class,'dathang'])->middleware('auth')->name('dathang');
+
 //Gio hang
 Route::get('addCart/{id}', [CartController::class,'add_Cart']);
 Route::get('deleteCart/{id}', [CartController::class,'delete_ItemCart']);

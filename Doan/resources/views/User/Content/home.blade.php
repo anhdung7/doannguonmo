@@ -103,7 +103,8 @@
                                         <ul class="add-actions-link">
                                             <li class="add-cart active">
                                                 {{-- {{url('/addCart/'.$item->ma_sp)}} --}}
-                                                <a onclick="addCart({{$item->ma_sp}})" href="javascript:">Add to cart</a>
+                                                <!--onclick="addCart({{$item->ma_sp}})" href="javascript:"-->
+                                                <a  href="#">Add to cart</a>
                                             </li>
                                             <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                                             <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>

@@ -29,54 +29,27 @@
                         <th>VGA</th>
                         <th>Màn hinh</th>
                         <th>Hệ điều hành</th>
-                        <th>Info</th>
+                        <th>Edit</th>
                         <th>Delete</th>
                       </tr>
                     </thead>
-                    <tfoot>
-                      <tr>
-                        <th>STT</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Số lượng</th>
-                        <th>Đơn giá</th>
-                        <th>RAM</th>
-                        <th>CPU</th>
-                        <th>VGA</th>
-                        <th>Màn hinh</th>
-                        <th>Hệ điều hành</th>
-                        <th>Info</th>
-                        <th>Delete</th>
-                      </tr>
-                      </tr>
-                    </tfoot>
+                    
                     <tbody>
-                      @foreach ($sanpham as $item)
+                     
                       <tr>
-                      <td>{{$loop->index+1}}</td>
-                        <td>{{$item->tensp}}</td>
-                        <td>{{$item->soluong}}</td>
-                        <td>{{number_format($item->dongia)}} ₫</td>
-                        <td>{{$item->RAM}} GB</td>
-                        <td>Intel core {{$item->CPU}}</td>
-                        <td>{{$item->VGA}}</td>
-                        <td>{{$item->manhinh}} inch</td>
-                        <td>{{$item->hedieuhanh}}</td>
-                        <td>
-                          <a href="{{route('suasp',$item->ma_sp)}}" class="btn btn-info btn-icon-split">
-                            <span class="icon text-white-50">
-                              <i class="fas fa-info-circle"></i>
-                            </span>
-                            <span class="text">Info</span>
-                          </a>
-                        </td>
-                        <td><a href="{{route('xoasp',$item->ma_sp)}}" class="btn btn-danger btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-trash"></i>
-                          </span>
-                          <span class="text">Delete</span>
-                        </a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
-                      @endforeach
+                      
                     </tbody>
                   </table>
                 </div>

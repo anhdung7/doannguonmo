@@ -24,23 +24,11 @@ class DonhangController extends Controller
                 'chitiethoadon.soluong',
                 'chitiethoadon.dongia',
                 'hoadon.tongtien',
-                'hoadon.tongsl'
+                'hoadon.ngaytao',
+                'hoadon.status'
             )
             ->groupBy('hoadon.ma_hd')
             ->get();
-        return view('Admin.Content.donhang', [
-            'donhang' => $donhang,
-        ]);
-    }
-    public function chitietdh($id)
-    {
-        $data = DB::table('chitiethoadon')
-            ->join('sanpham', 'sanpham.ma_sp', '=', 'chitiethoadon.SANPHAMma_sp')
-            ->where('chitiethoadon.HOADONma_hd', '=', $id)
-            ->select('chitiethoadon.soluong', 'sanpham.tensp', 'chitiethoadon.dongia')
-            ->get();
-        return view('Admin.Content.chitietdh', [
-            'product' => $data
-        ]);
+        return view('Admin.Content.donhang');
     }
 }

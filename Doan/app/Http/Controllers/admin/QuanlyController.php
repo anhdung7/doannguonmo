@@ -14,10 +14,7 @@ class QuanlyController extends Controller
     }
     public function homequanly(){
         $sp = DB::table('sanpham')->orderBy('ma_sp','desc')->get();
-        return view('Admin.Content.product',
-    [
-        'sanpham'=>$sp
-    ]);
+        return view('Admin.Content.product');
     }
     public function login(Request $request)
     {
