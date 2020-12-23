@@ -103,11 +103,10 @@
                                         <ul class="add-actions-link">
                                             <li class="add-cart active">
                                                 {{-- {{url('/addCart/'.$item->ma_sp)}} --}}
-                                                <!--onclick="addCart({{$item->ma_sp}})" href="javascript:"-->
-                                                <a  href="#">Add to cart</a>
+                                                <a onclick="addCart({{$item->ma_sp}})" href="javascript:">Thêm Vào Giỏ</a>
                                             </li>
                                             <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="{{url("$item->ten_nhasanxuat/$item->ma_sp")}}"><i class="fa fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -178,10 +177,10 @@
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active">
-                                                        <a onclick="addCart({{$item->ma_sp}})" href="javascript:">Add to cart</a>
+                                                        <a onclick="addCart({{$item->ma_sp}})" href="javascript:">Thêm Vào Giỏ</a>
                                                     </li>
                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                    <li><a href="{{url("$item->ten_nhasanxuat/$item->ma_sp")}}"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -29,18 +29,18 @@
                                     <th class="li-product-quantity">Số lượng</th>
                                     <th class="li-product-subtotal">Tổng tiền</th>
                                     <th class="li-product-remove">Xóa</th>
-                                    <th class="li-product-remove">Edit</th>
+                                    <th class="li-product-remove">Sửa</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @if(Session::has("Cart") != null)
                                 @foreach (Session::get('Cart')->sanphams as $item)
                                 <tr>
-                                    <td class="li-product-thumbnail"><a href="#"><img style="width: 15%" src="{{asset("/images/product/".$item['sanphaminfo']->hinhanh)}}" alt="Image"></a></td>
+                                    <td class="li-product-thumbnail"><a href="#"><img style="height: 200px;" src="{{asset("/images/product/".$item['sanphaminfo']->hinhanh)}}" alt="Image"></a></td>
                                 <td class="li-product-name"><a href="{{url("sanpham/".$item['sanphaminfo']->ma_sp)}}">{{$item['sanphaminfo']->tensp}}</a></td>
                                     <td class="li-product-price"><span class="amount">{{number_format($item['sanphaminfo']->dongia)}}₫</span></td>
                                     <td class="quantity">
-                                        <label>Quantity</label>
+                                        <!-- <label>Quantity</label> -->
                                         <div class="cart-plus-minus">
                                             <input class="cart-plus-minus-box" id="sl-{{$item['sanphaminfo']->ma_sp}}" value="{{$item['sl']}}" type="text">
                                             <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
@@ -50,12 +50,12 @@
                                     <td class="product-subtotal"><span class="amount">{{number_format($item['gia'])}}₫</span></td>
                                     <td class="li-product-remove">
                                         <a href="#">
-                                            <i class="fa fa-times" onclick="deletelistCart({{$item['sanphaminfo']->ma_sp}})"></i>
+                                            <i class="fa fa-times" style="font-size:28px;" onclick="deletelistCart({{$item['sanphaminfo']->ma_sp}})"></i>
                                         </a>
                                     </td>
                                 <td class="li-product-remove">
                                     <a href="#">
-                                        <i data-id="{{$item['sanphaminfo']->ma_sp}}" onclick="savelistCart({{$item['sanphaminfo']->ma_sp}})" id="save-cart-{{$item['sanphaminfo']->ma_sp}}" class="fas fa-save"></i>
+                                        <i data-id="{{$item['sanphaminfo']->ma_sp}}" onclick="savelistCart({{$item['sanphaminfo']->ma_sp}})" id="save-cart-{{$item['sanphaminfo']->ma_sp}}" class="fa fa-floppy-o" style="font-size:30px;"></i>
                                     </a>
                                 </td>
                                 </tr>
@@ -78,7 +78,7 @@
                                     @endif
                                    
                                 </ul>
-                                <a  href="{{route('checkout')}}" >Chuyển đến Check out</a>
+                                <a  href="{{route('checkout')}}" >Thanh Toán</a>
                             </div>
                         </div>
                     </div>

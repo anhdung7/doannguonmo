@@ -62,7 +62,7 @@
                             <li class="hm-minicart">
                                 <div class="hm-minicart-trigger">
                                     <span class="item-icon"></span>
-                                    <span class="item-text">
+                                    <span class="item-text"> Giỏ Hàng
                                         @if(Session::has("Cart") != null)
                                             <span class="cart-item-count">{{Session::get("Cart")->tongsl}}</span>
                                         @else
@@ -93,10 +93,10 @@
                                         </ul>
                                     <div class="minicart-button">
                                         <a href="{{route('giohang')}}" class="li-button li-button-fullwidth li-button-dark">
-                                            <span>View Full Cart</span>
+                                            <span>Xem Giỏ Hàng</span>
                                         </a>
                                         <a href="{{route('checkout')}}" class="li-button li-button-fullwidth">
-                                            <span>Checkout</span>
+                                            <span>Mua Hàng</span>
                                         </a>
                                     </div>
                                 </div>

@@ -87,7 +87,7 @@
                             </li>
                             <li>
                                 <span>Email: </span>
-                                <a href="mailto://info@yourdomain.com">myduyen06122910@gmail.com</a>
+                                <a href="mailto://info@yourdomain.com">duongquynhthanhv1308@gmail.com</a>
                             </li>
                         </ul>
                     </div>
